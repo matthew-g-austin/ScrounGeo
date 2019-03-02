@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
     <body style="background-color:blueviolet">
-        <script src="driver.js"></script>
-        <h1 style="color:coral">Welcome to Scro unGeo!!! Chan ge</h1>
-        <button onclick="Check()">Check proximity</button>
+        <script >
+          var x = document.getElementById("result");
+            function Check(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }  
+        </script>
+        <h1 style="color:coral">Welcome to ScrounGeo!!! Change</h1>
+        <button onclick="">Check proximity</button>
         <p id="result"></p>
         <script src="driver.js"></script>
     </body>
