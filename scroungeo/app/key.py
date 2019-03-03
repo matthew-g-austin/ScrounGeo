@@ -1,1 +1,1 @@
-key="AIzaSyB9qxP7bIuiaW2KuVTHxYwJhZhO2VT-U2M"
+mapkey="AIzaSyCwqMmPv7BRG31TjKWpwN2ysrc3HueeHy8"

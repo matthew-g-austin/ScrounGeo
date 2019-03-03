@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{url_for({' static ',filename='style.css'})}}"></script>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body style="background-image: url(TOGETHER.png)">
+    <div class="header">
+        <!-- <img style="height:17%;width:12%;margin-left:25%;margin-top:1.6%;position: absolute"src="geoblitz.png" alt="logo"></img> -->
+        <h1 style="color: rgba(71, 68, 66, 0.726);font-size:700%;text-align:center">Geoblitz</h1>
+    </div>
+    <h2 style="color:rgba(71, 68, 66, 0.726);margin-bottom:2%;font-size:400%;text-align:center">A life-size, real-time enemy ship targeting game</h2>
+    <div class="text-center">
+        <a class="btn btn-info">About</a>
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black">
+            Choose Ship
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Battleship</a>
+            <a class="dropdown-item" href="#">Submarine</a>
+            <a class="dropdown-item" href="#">Patrol Boat</a>
+        </div>
+    </div>
+    
+    <p id="result"></p>
+    <script >
+        var x = document.getElementById("result");
+        function Check(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+            else { 
+                x.textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position) {
+            x.textContent =  "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+    
+
+    <div id="stage" class="container">
+        
+            <div id="divheight" class="row justify-content-md-center">
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>    
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>   
+            </div>
+            
+            <div id="divheight" class="row justify-content-md-center">
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>  
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>     
+            </div>
+            
+            <div id="divheight" class="row justify-content-md-center">
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>   
+            </div>
+            
+            <div id="divheight" class="row justify-content-md-center">
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-2 border border-dark text-center">
+                    One of three columns
+                </span>       
+            </div>
+        </div>
+        <h2 style="color:rgba(71, 68, 66, 0.726);margin-top:2%;font-size:400%;text-align:center">   </h2>
+
+        <div class="text-center">
+                <a class="btn btn-info">Place Target</a>
+                <a class="btn btn-info">Make Play</a>
+                <a class="btn btn-info">Place Ship</a>
+                <a class="btn btn-info">Rotate Ship</a>
+        </div>
+
+        <h2 style="color:rgba(71, 68, 66, 0.726);margin-bottom:1%;font-size:400%;text-align:center">   </h2>
+
+        <!-- <div class="container"> 
+            <div class="row justify-content-md-center">
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span> 
+                <span class="col-1 border border-dark text-center">
+                        One of three columns
+                    </span>     
+            </div>
+            
+            <div class="row justify-content-md-center">
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span> 
+                <span class="col-1 border border-dark text-center">
+                        One of three columns
+                    </span>   
+            </div>
+            
+            <div class="row justify-content-md-center">
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>  
+                <span class="col-1 border border-dark text-center">
+                        One of three columns
+                    </span>    
+            </div>
+            
+            <div class="row justify-content-md-center">
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>
+                <span class="col-1 border border-dark text-center">
+                    One of three columns
+                </span>  
+                <span class="col-1 border border-dark text-center">
+                        One of three columns
+                    </span>    
+            </div> -->
+        </div>
+        
+    </body>
+    </html>
+    

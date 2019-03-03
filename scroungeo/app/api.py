@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify
 import requests
-from key import key
+from key import mapkey
 import imghdr
 app = Flask(__name__)
 
@@ -13,13 +13,13 @@ def retreive():
 
 @app.route("/sendRequest/<string:query>")
 def results(query):
-	search_payload = {"key":key, "query":query}
+	search_payload = {"mapkey":mapkey, "query":query}
 	search_req = requests.get(search_url, params=search_payload)
 	search_json = search_req.json()
 
 	photo_id = search_json["results"][0]["photos"][0]["photo_reference"]
 
-	photo_payload = {"key" : key, "maxwidth" : 500, "maxwidth" : 500, "photoreference" : photo_id}
+	photo_payload = {"mapkey" : mapkey, "maxwidth" : 500, "maxwidth" : 500, "photoreference" : photo_id}
 	photo_request = requests.get(photos_url, params=photo_payload)
 
 	photo_type = imghdr.what("", photo_request.content)
@@ -32,4 +32,4 @@ def results(query):
 
 
 if __name__ ==  "__main__":
-    app.run(debug=True)
+    app.run(ssl_context="adhoc")
